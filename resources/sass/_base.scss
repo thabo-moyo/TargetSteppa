@@ -1,0 +1,123 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #02756c, #ec06cd0e);
+    font-family: $font-family-sans-serif;
+
+    main {
+        min-height: 80vh;
+    }
+
+    .home-content {
+        min-height: 600px !important;
+        height: 80vh;
+        width: 80% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-top: 35px;
+    }
+
+    .glass {
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)) !important;
+        backdrop-filter: blur(5px);
+        position: relative;
+    }
+
+    .circle {
+        position: absolute;
+        background: linear-gradient(to right bottom, #00fff2, #0144);
+        opacity: 0.75;
+        border-radius: 2rem;
+        z-index: -5;
+        width: 15rem;
+        height: 15rem;
+
+    }
+
+    .circle1 {
+        bottom: -13%;
+        left: 3%;
+    }
+
+    .circle2 {
+        top: -13%;
+        right: 4%;
+    }
+
+    .dashboard {
+        background: linear-gradient(to right bottom, rgba(255, 235, 215, 0.5), rgba(255, 255, 255, 0.3));
+        border-radius: 1rem 0 0 1rem;
+        position: relative;
+        min-height: 600px;
+        height: 80vh !important;
+        width: 17%;
+        .user {
+            border-radius: 10px 0 0 0rem;
+            background: linear-gradient(to right bottom, rgba(2, 208, 245, 0.5), rgba(3, 230, 154, 0.3));
+        }
+
+        .item {
+            padding: 10px 0px 10px 25px;
+            width: 100% !important;
+            height: auto;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            transition: all 0.3s ease-in-out;
+
+            svg {
+                width: 25px;
+                height: 25px;
+                justify-self: left;
+                margin-right: 25px;
+            }
+
+            &:hover {
+                width: 100%;
+                background: linear-gradient(to right top, rgba(2, 208, 245, 0.5), rgba(3, 230, 154, 0.3));
+            }
+        }
+
+        .promo {
+            background: linear-gradient(to right top, rgba(2, 208, 245, 0.3), rgba(3, 230, 154, 0.5));
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 10px;
+            border-radius: 1rem;
+            position: relative;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .active {
+            border-left: 4px solid white;
+           // border-right: 10px solid inherit;
+        }
+    }
+
+    hr {
+        border: none;
+        border-top: 3px double #333;
+        color: #333;
+        overflow: visible;
+        text-align: center;
+        height: 5px;
+    }
+
+    .profile-image-container {
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        /* change the default display type to inline-block */
+        overflow: hidden;
+        ;
+
+    }
+}
+
+svg path {
+    fill: linear-gradient(to right bottom, #00fff2, #0144) !important;
+}
