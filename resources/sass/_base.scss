@@ -11,9 +11,6 @@ body {
         min-height: 600px !important;
         height: 80vh;
         width: 80% !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         border-radius: 10px;
         margin-top: 35px;
     }
@@ -33,16 +30,21 @@ body {
         width: 15rem;
         height: 15rem;
 
+        &:hover{
+            transform: scale(0.5);
+        }
     }
 
     .circle1 {
-        bottom: -13%;
+        bottom: 0%;
         left: 3%;
+        overflow: hidden;
     }
 
     .circle2 {
-        top: -13%;
+        top: 0%;
         right: 4%;
+        overflow: hidden;
     }
 
     .dashboard {
@@ -95,6 +97,7 @@ body {
         .active {
             border-left: 4px solid white;
            // border-right: 10px solid inherit;
+           backdrop-filter: opacity(0.5);
         }
     }
 
