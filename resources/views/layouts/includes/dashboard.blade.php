@@ -11,19 +11,19 @@
     </div>
     <div
         class="navigation-items text-left d-flex flex-column w-100 h-100 align-items-center justify-content-left">
-        <div class="item item1">
+        <div class="item item1 ease-in-1s">
             <i class="fas fa-home fa-2x"></i>
             <p> Targets </p>
         </div>
-        <div class="item item2 active">
+        <div class="item item2 active ease-in-1s">
             <i class="fas fa-shoe-prints fa-2x"></i>
             <p> Stepped on </p>
         </div>
-        <div class="item item3">
+        <div class="item item3 ease-in-1s">
             <i class="fas fa-tasks fa-2x"></i>
             <p> Progress </p>
         </div>
-        <div class="item item4">
+        <div class="item item4 ease-in-1s">
             <i class="fas fa-stopwatch fa-2x"></i>
             <p> Reminders </p>
         </div>

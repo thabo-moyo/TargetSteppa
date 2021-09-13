@@ -10,17 +10,17 @@
 
     <title>{{ config('app.name', 'TargetSteppa') }}</title>
 
+
+    <!-- Styles -->
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/tyq7nbz.css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 
 </head>
 
@@ -28,13 +28,15 @@
     <div id="app">
         <main class="py-4">
             <div class="container d-flex justify-content-center align-items-center align-content-center position-relative">
-                <div class="glass d-flex home-content ">
-                    @include('layouts.includes.dashboard')
-                    @yield('content')
+                <div class="glass d-flex home-content position-relative">
+            @include('layouts.includes.dashboard')
+            @yield('content')
                 </div>
             </div>
-            <div class="circle circle1 ease-in-4s " data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"></div>
-            <div class="circle circle2 ease-in-4s" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"></div>
+            <div class="circle circle1 ease-in-4s " data-aos="fade-left" data-aos-offset="300"
+                data-aos-easing="ease-in-sine"></div>
+            <div class="circle circle2 ease-in-4s" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"></div>
         </main>
     </div>
     @include('layouts.includes.footer')
