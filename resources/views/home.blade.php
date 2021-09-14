@@ -14,7 +14,7 @@
 
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-2">
             <div class="d-flex justify-content-between ml-3">
                 <div class="search-filters d-flex">
                     <p class="p-3 active">All</p>
@@ -28,13 +28,19 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
                 <form class="card-container">
-                    <div class="inputGroup">
-                        <input id="option1" name="option1" type="checkbox"/>
-                        <label for="option1">Option One</label>
-                      </div>
+                    <div class="task task-1 w-100 d-flex flex-column h-100">
+                        <input class="inp-cbx" id="cbx" type="checkbox" style="display: none;" />
+                        <label class="cbx" for="cbx">
+                            <span>
+                                <svg viewbox="0 0 12 9">
+                                    <polyline points="1 5 4 8 11 1"></polyline>
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
                 </form>
             </div>
         </div>

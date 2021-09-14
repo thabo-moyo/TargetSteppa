@@ -56,6 +56,7 @@ body {
         min-height: 600px;
         height: 80vh !important;
         width: 17%;
+        min-width: 220px;
         .user {
             border-radius: 10px 0 0 0rem;
             background: linear-gradient(to right bottom, rgba(2, 208, 245, 0.5), rgba(3, 230, 154, 0.3));
@@ -121,7 +122,11 @@ body {
 
     }
 }
+.card-container{
+    width: 100%;
 
-svg path {
-    fill: linear-gradient(to right bottom, #00fff2, #0144) !important;
+    svg{
+        width: 15px;
+        height: 15px;
+    }
 }
