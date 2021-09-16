@@ -13,7 +13,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
  |
  */
 
-mix.browserSync(process.env.APP_URL);
+mix.browserSync(process.env.APP_URL+':8000');
 
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [

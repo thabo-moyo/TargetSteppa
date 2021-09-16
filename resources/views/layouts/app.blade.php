@@ -26,16 +26,16 @@
 
 <body class="font-sans text-grey-900 text-sm">
     <div id="app">
-        <main class="py-4">
-            <div class="container d-flex justify-content-center align-items-center align-content-center position-relative">
-                <div class="glass d-flex home-content position-relative">
+        <main class="pt-4 mb-4">
+            <div class="container d-flex justify-content-center align-items-center align-content-center position-relative ">
+                <div class="glass d-flex home-content position-relative shadow">
             @include('layouts.includes.dashboard')
             @yield('content')
                 </div>
             </div>
-            <div class="circle circle1 ease-in-4s " data-aos="fade-left" data-aos-offset="300"
+            <div class="circle circle1 ease-in-4s shadow" data-aos="fade-left" data-aos-offset="300"
                 data-aos-easing="ease-in-sine"></div>
-            <div class="circle circle2 ease-in-4s" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+            <div class="circle circle2 ease-in-4s shadow" data-aos="flip-left" data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"></div>
         </main>
     </div>

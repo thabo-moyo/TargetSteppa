@@ -31,11 +31,11 @@ body {
         margin: 0;
     }
     .home-content {
-        min-height: 600px !important;
-        height: 80vh;
-        width: 80% !important;
+        min-height: 80vh !important;
+        height: 100%;
+        width: 100% !important;
         border-radius: 10px;
-        margin-top: 35px;
+        margin-top: 25px;
     }
 
     .glass {
@@ -71,11 +71,11 @@ body {
     }
 
     .dashboard {
-        background: linear-gradient(to right bottom, rgba(255, 235, 215, 0.5), rgba(255, 255, 255, 0.3));
+        background: linear-gradient( 40deg, rgba(255, 235, 215, 0), rgba(255, 255, 255, 0.3));
         border-radius: 1rem 0 0 1rem;
         position: relative;
-        min-height: 600px;
-        height: 80vh !important;
+        min-height: 80vh;
+        height: inherit !important;
         width: 17%;
         min-width: 220px;
         .user {
