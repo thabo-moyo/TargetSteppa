@@ -1,7 +1,28 @@
+
+/* body {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+} */
+
 body {
-    min-height: 100vh;
-    background: linear-gradient(to right top, #02756c, #ec06cd0e);
+   // min-height: 100vh;
+   // background: linear-gradient(-45deg, #00a799, #9f00e90e, #23a6d5);
+   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+   background-size: 400% 400%;
+    //background: linear-gradient(-45deg, #c065cc, #00e73a, #23a6d5, #fc9700);
     font-family: $font-family-sans-serif;
+    animation: gradient 15s ease infinite;
+    @keyframes gradient {
+        0% {
+            background-position: 10% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 10% 50%;
+        }
+    }
 
     main {
         min-height: 80vh;
