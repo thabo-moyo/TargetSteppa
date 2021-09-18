@@ -26,16 +26,11 @@
 
 <body class="font-sans text-grey-900 text-sm">
     <div id="app">
-        <main class="pt-4 mb-4">
-            <div class="container d-flex justify-content-center align-items-center align-content-center position-relative ">
-                <div class="glass d-flex home-content position-relative shadow">
-            @include('layouts.includes.dashboard')
+        <main class="">
             @yield('content')
-                </div>
-            </div>
-            <div class="circle circle1 ease-in-4s shadow" data-aos="fade-left" data-aos-offset="300"
+            <div class="animate-pulse-500 circle circle1 ease-in-4s shadow" data-aos="fade-left" data-aos-offset="300"
                 data-aos-easing="ease-in-sine"></div>
-            <div class="circle circle2 ease-in-4s shadow" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+            <div class=" animate-pulse circle circle2 ease-in-4s shadow" data-aos="flip-left" data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"></div>
         </main>
     </div>

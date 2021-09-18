@@ -23,7 +23,7 @@ body {
             background-position: 10% 50%;
         }
     }
-
+    
     main {
         min-height: 80vh;
     }
@@ -41,7 +41,6 @@ body {
     .glass {
         background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)) !important;
         backdrop-filter: blur(5px);
-        position: relative;
     }
 
     .circle {
@@ -75,7 +74,7 @@ body {
         border-radius: 1rem 0 0 1rem;
         position: relative;
         min-height: 80vh;
-        height: inherit !important;
+        height: 100% !important;
         width: 17%;
         min-width: 220px;
         .user {
@@ -151,3 +150,11 @@ body {
         height: 15px;
     }
 }
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
