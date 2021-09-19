@@ -6,24 +6,33 @@
         <div class="row">
             <div class="col-12 p-3 w-100 h-100 text-center ">
                 <div class="login-header d-flex justify-content-center pt-5">
-                    <h5 for="email" class="col-md-4 col-form-label text-md-right text-xl text-bold">{{ __('Login') }}
+                    <h5 for="email" class="col-md-4 col-form-label text-md-right text-xl text-bold">{{ __('Register') }}
                     </h5>
                 </div>
-                <form class="d-flex flex-column align-content-center justify-content-center text-left p-5" method="POST"
+                <form class="d-flex flex-column form-custom text-left" method="POST"
                     action="{{ route('register') }}">
                     @csrf
-                    <div class="row mt-2 d-flex justify-content-center">
-                        <div class="col-md-12 login-container">
-
-                            <label for="name" class="col-md-4 d-block text-md-right">{{ __('Name') }}</label>
-                            <input id="name" type="text" class="pb-3 d-block @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required  autofocus>
-                            @error('name')
+                    <div class="row mt-5 justify-content-between">
+                        <div class="col-md-5 login-container ">
+                            <label for="first_name" class="  text-md-right">{{ __('First Name') }}</label>
+                            <input id="first-name" type="text" class="pb-3  @error('first_name') is-invalid @enderror"
+                                name="first_name" value="{{ old('first_name') }}" required  autofocus>
+                            @error('first_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
+                        <div class="col-md-5 login-container">
+                            <label for="last_name" class=" text-md-right">{{ __('Last Name') }}</label>
+                            <input id="last_name" type="text" class="pb-3 d-block @error('last_name') is-invalid @enderror"
+                                name="last_name" value="{{ old('last_name') }}" required  autofocus>
+                            @error('last_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div
                     </div>
                     <div class="row mt-5 d-flex justify-content-center">
                         <div class="col-md-12 login-container">

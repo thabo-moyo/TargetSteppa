@@ -13,16 +13,26 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
  |
  */
 
-mix.browserSync(process.env.APP_URL+':8000');
+mix.browserSync({
+    proxy: process.env.APP_URL,
+    open: true,
+    watchOptions: {
+        usePolling: true,
+        interval: 1
+    }
+});
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js([
+        'resources/js/app.js',
+        'resources/js/_modal-create.js',
+        'resources/js/custom.js',
+    ], 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
         require('autoprefixer'),
         require('postcss-import'),
     ])
-.sass('resources/sass/app.scss', 'public/css')
-.sourceMaps();
+    .sass('resources/sass/app.scss', 'public/css');
 
 
 /* mix.webpackConfig({

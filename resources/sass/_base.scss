@@ -12,6 +12,7 @@ body {
     //background: linear-gradient(-45deg, #c065cc, #00e73a, #23a6d5, #fc9700);
     font-family: $font-family-sans-serif;
     animation: gradient 15s ease infinite;
+    overflow: hidden !important;
     @keyframes gradient {
         0% {
             background-position: 10% 50%;
@@ -23,19 +24,13 @@ body {
             background-position: 10% 50%;
         }
     }
-    
-    main {
-        min-height: 80vh;
-    }
     .row{
         margin: 0;
     }
     .home-content {
-        min-height: 80vh !important;
-        height: 100%;
+        height: 85vh;
         width: 100% !important;
         border-radius: 10px;
-        margin-top: 25px;
     }
 
     .glass {
@@ -58,7 +53,8 @@ body {
     }
 
     .circle1 {
-        bottom: 0%;
+        bottom: 0;
+        position: absolute;
         left: 3%;
         overflow: hidden;
     }
@@ -157,4 +153,24 @@ body {
     align-items: center;
     text-align: center;
     min-height: 100vh;
-  }
+}
+
+//Checkout box
+
+.task-status {
+    input{
+         width: 10px;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        text-overflow: ellipsis;
+    }
+
+}

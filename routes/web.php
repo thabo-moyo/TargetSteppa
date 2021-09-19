@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::prefix('project')->group( function () {
+        Route::post('/create', [ProjectController::class, 'create'])->name('create');
+    });
+});

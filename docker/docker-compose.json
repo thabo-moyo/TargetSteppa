@@ -1,0 +1,53 @@
+{
+    "version": "3",
+    "services": {
+        "targetsteppa.web": {
+            "build": {
+                "context": "web",
+                "args": {
+                    "DEBUG_HOST": "${DEBUG_HOST}"
+                }
+            },
+            "ports": [
+                "443:443",
+                "80:80"
+            ],
+            "container_name": "targetsteppa.web",
+            "volumes": [
+                "${DOCUMENT_ROOT}:/var/www/html"
+            ]
+        },
+        "targetsteppa.database": {
+            "build": {
+                "context": "database"
+            },
+            "ports": [
+                "3306:3306"
+            ],
+            "container_name": "targetsteppa.database",
+            "environment": {
+                "MYSQL_ROOT_PASSWORD": "${MYSQL_ROOT_PASSWORD}",
+                "MYSQL_DATABASE": "${MYSQL_DATABASE}",
+                "MYSQL_USER": "${MYSQL_USER}",
+                "MYSQL_PASSWORD": "${MYSQL_PASSWORD}"
+            },
+            "volumes": [
+                "targetsteppa-database:/var/lib/mysql"
+            ]
+        },
+        "targetsteppa.redis": {
+            "build": {
+                "context": "redis"
+            },
+            "ports": [
+                "6379:6379"
+            ],
+            "container_name": "targetsteppa.redis"
+        }
+    },
+    "volumes": {
+        "targetsteppa-database": {
+            "driver": "local"
+        }
+    }
+}

@@ -5,7 +5,7 @@
                     src="{{ url('avatar.png') }}"></a>
         </div>
         <div class="profile-info text-center ">
-            <p class="mb-2 mt-1">Thabo Moyo</p>
+            <p class="mb-2 mt-1">{{  Auth::user()->first_name }}  {{  Auth::user()->last_name }}</p>
             <small class="small">Member</small>
         </div>
     </div>
@@ -32,4 +32,11 @@
     <div class="promo justify-self-end mt-2">
         <p>KEEP IT STEPPIN!</p>
     </div>
+
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+        Logout
+    </a>
+    <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </div>

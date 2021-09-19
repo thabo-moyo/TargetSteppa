@@ -5,9 +5,17 @@
         font-size: 30px !important;
     }
 }
+
+.form-custom {
+    padding: 50px;
+    .row > *{
+        padding: 0 !important;
+    }
+}
 .login-container {
     position: relative;
     border-bottom: 2px solid #d9d9d9;
+    width: inherit;
     padding: 0 !important;
     textarea,
     input[type='text'], input[type='email'], input[type='phone'], input[type='password'] {
@@ -25,4 +33,7 @@
         text-overflow: ellipsis ;
     }
 
+    .invalid-feedback{
+        position: absolute;
+    }
 }
