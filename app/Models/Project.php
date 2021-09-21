@@ -11,7 +11,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    private $rules = [
+    private array $rules = [
         'title' => 'required|string',
         'due_date' => 'required|date',
         'tasks' => 'required|json|string',
@@ -22,7 +22,7 @@ class Project extends Model
     /**
      * @var string[]
      */
-    protected $status = [
+    protected array $status = [
         'IN PROGRESS',
         'ON HOLD',
         'COMPLETE'
@@ -61,19 +61,9 @@ class Project extends Model
     /**
      * @return string[]
      */
-    public function getRules()
+    public function getRules(): array
     {
         return $this->rules;
     }
 
-    /**
-     * create
-     *
-     * @param mixed $data
-     * @return array
-     */
-    public function make($data): ModelsProject
-    {
-        return self::create($data);
-    }
 }

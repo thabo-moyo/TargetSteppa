@@ -4,53 +4,104 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
-use  App\Models\User;
-use Illuminate\Auth\Events\Validated;
+use App\Http\Requests\ProjectRequest;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
-    private $project;
     /**
-     * Create a new controller instance.
+     * Display a listing of the resource.
      *
-     * @return void
+     * @return Response
      */
-    public function __construct()
+    public function index()
     {
-        // $this->middleware('users');
-        $this->project = new Project();
+        return Project::get();
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
-     * create a new controller instance.
+     * Store a newly created resource in storage.
      *
-     * @param  mixed $data
-     * @return bool
+     * @param ProjectRequest $request
+     * @return array|Project
      */
-    public function create(Request $request)
+    public function store(ProjectRequest $request): array | Project
     {
-        $data = $request->all();
+        $validated = $request->validated();
 
-        $data['user_id'] = $request->user()->id;
-        $validated = Validator::make($data, $this->project->getRules());
+        if (!empty($validated)) {
+            $data = $request->all();
+            $data['user_id'] = $request->user()->id ?? Auth::id();
 
-        if (!$validated->fails()) {
             try {
-                $this->project->make($data);
+                return Project::create($data);
 
-                return  redirect('/')->with('success', 'Projected Added');
-
-            } catch (\Illuminate\Database\QueryException $exception) {
-
-                return  \back()->withErrors($exception->getMessage());
+            } catch (\PDOException $exception) {
+                Log::info('Failed to Create Project: ' . $exception->errorInfo);
+                return ['Error' => 'Failed to create new project' . $exception->errorInfo];
 
             }
+
         }
 
-        return  \back()->withErrors($validated);
+        return ['Error' => 'Failed Validation. '];
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Project $project
+     * @return Response
+     */
+    public function show(Project $project)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param Project $project
+     * @return Response
+     */
+    public function edit(Project $project)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param Project $project
+     * @return Response
+     */
+    public function update(Request $request, Project $project)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Project $project
+     * @return Response
+     */
+    public function destroy(Project $project)
+    {
+        //
     }
 }

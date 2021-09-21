@@ -25,7 +25,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::prefix('project')->group( function () {
-        Route::post('/create', [ProjectController::class, 'create'])->name('create');
-    });
+    Route::resource('projects', ProjectController::class);
 });

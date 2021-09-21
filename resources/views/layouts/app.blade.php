@@ -15,6 +15,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,7 +24,7 @@
 
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
+    @stack('styles')
 </head>
 
 <body class="font-sans text-grey-900 text-sm ">
@@ -43,7 +44,7 @@
     <div class=" animate-pulse circle circle5 shadow" id="c5"></div>
     <div class=" animate-pulse circle circle6 shadow" id="c6"></div>
     <script src="{{ Url('js/custom.js') }}"></script>
-
+    @stack('scripts')
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+/*
 const search_container = $('.search-container');
 
 function changeInput(obj) {
@@ -126,3 +127,4 @@ var y = new RandomObjectMover(document.querySelector('.circle2'), window);
 
 x.start();
 y.start();
+*/
