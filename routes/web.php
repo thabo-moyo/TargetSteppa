@@ -18,12 +18,12 @@ use App\Http\Controllers\ProjectController;
 
 Auth::routes();
 
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
     Route::get('/', function () {
-        return view('home');
+        return view('layouts.app');
     });
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::resource('projects', ProjectController::class);
-});
+//});

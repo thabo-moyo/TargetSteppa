@@ -29,6 +29,7 @@ mix.js([
         'resources/js/_modal-create.js',
         'resources/js/modals.js',
     ], 'public/js')
+    .vue()
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
         require('autoprefixer'),

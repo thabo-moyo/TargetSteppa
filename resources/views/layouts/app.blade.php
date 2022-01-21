@@ -29,12 +29,9 @@
 
 <body class="font-sans text-grey-900 text-sm ">
     <div id="app">
-        <main class="position-relative">
-            @yield('content')
-
-
-        </main>
+        <router-view></router-view>
     </div>
+    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 
     @include('layouts.includes.footer')
     <div class=" overflow-hidden animate-pulse-500 circle circle1 shadow" id="c2"></div>

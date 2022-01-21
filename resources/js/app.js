@@ -16,7 +16,14 @@ import snackbar from 'material-notifications'
 import AOS from 'aos';
 import 'bootstrap';
 import axios from 'axios';
+import { createApp } from "vue";
 
+import App from "./index.vue";
+import route from "./routes";
+
+createApp(App).use(route).mount("#app");
+
+require("./bootstrap");
 
 AOS.init();
 
