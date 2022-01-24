@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
+require('mix-tailwindcss');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 require('jquery');
@@ -17,7 +17,7 @@ require('jquery');
 
 mix.browserSync({
     proxy: process.env.APP_URL,
-    open: true,
+    open: false,
     watchOptions: {
         usePolling: true,
         interval: 1
@@ -35,7 +35,8 @@ mix.js([
         require('autoprefixer'),
         require('postcss-import'),
     ])
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .tailwind();
 mix.autoload({ 'jquery': ['window.$', 'window.jQuery'] })
 
 

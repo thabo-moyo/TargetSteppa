@@ -4,7 +4,7 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import('../layouts/app'),
+        component: () => import('../app'),
     }
 ]
 

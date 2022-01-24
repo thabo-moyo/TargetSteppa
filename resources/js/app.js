@@ -11,19 +11,14 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
-import snackbar from 'material-notifications'
-
+//import snackbar from 'material-notifications'
 import AOS from 'aos';
-import 'bootstrap';
-import axios from 'axios';
 import { createApp } from "vue";
 
-import App from "./index.vue";
+import App from "./app.vue";
 import route from "./routes";
 
 createApp(App).use(route).mount("#app");
-
-require("./bootstrap");
 
 AOS.init();
 
