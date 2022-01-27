@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProjectResource;
 use App\Models\Project;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProjectRequest;
 use Illuminate\Http\Response;
@@ -15,11 +17,11 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Project[]|Collection|\Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return Project::get();
+        return Project::all();
     }
 
     /**

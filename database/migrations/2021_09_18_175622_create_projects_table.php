@@ -13,9 +13,9 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('project', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id()->index();
-            $table->foreignId('user_id')->constrained('users');
+            $table->unsignedInteger('user_id');
             $table->string('title');
             $table->string('content');
             $table->string('status');

@@ -12,7 +12,7 @@ class ProjectFactory extends Factory
      *
      * @var string
      */
-    protected $model = Product::class;
+    protected $model = Project::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +23,21 @@ class ProjectFactory extends Factory
     {
 
         return [
+            'user_id' => 1,
             'title' => $this->faker->name(),
-            'status' => $this->faker->text(),
+            'content' => $this->faker->text(),
+            'status' => $this->faker->text(5),
             'due_date' => now(),
+            'completed' => 0,
+            'deleted' => 0,
             'tasks' => \json_encode(['test' => true, 'data' => 'okay']), // password
         ];
+    }
+
+    public function run()
+    {
+        Project::factory()
+            ->count(50)
+            ->create();
     }
 }

@@ -21,16 +21,15 @@ body {
             background-position: 100% 50%;
         }
         100% {
-            background-position: 10% 50%;
+            background-position: 50% 50%;
         }
     }
     .row{
         margin: 0;
     }
     .home-content {
-        height: 85vh;
-        width: 100% !important;
-        border-radius: 10px;
+        height: 100vh;
+        //border-radius: 10px;
     }
 
     .glass {
@@ -66,13 +65,9 @@ body {
     }
 
     .dashboard {
-        background: linear-gradient( 40deg, rgba(255, 235, 215, 0), rgba(255, 255, 255, 0.3));
+        background: linear-gradient( 40deg, rgba(255, 235, 215, 0), rgba(255, 255, 255, 0.7));
         border-radius: 1rem 0 0 1rem;
-        position: relative;
-        min-height: 80vh;
-        height: 100% !important;
-        width: 17%;
-        min-width: 220px;
+
         .user {
             border-radius: 10px 0 0 0rem;
             background: linear-gradient(to right bottom, rgba(2, 208, 245, 0.5), rgba(3, 230, 154, 0.3));

@@ -11,7 +11,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    private array $rules = [
+    private $rules = [
         'title' => 'required|string',
         'due_date' => 'required|date',
         'tasks' => 'required|json|string',
@@ -22,7 +22,7 @@ class Project extends Model
     /**
      * @var string[]
      */
-    protected array $status = [
+    protected $status = [
         'IN PROGRESS',
         'ON HOLD',
         'COMPLETE'

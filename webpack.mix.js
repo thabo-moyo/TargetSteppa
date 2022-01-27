@@ -1,8 +1,7 @@
 const mix = require('laravel-mix');
 require('mix-tailwindcss');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-require('jquery');
+//const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 /*
  |--------------------------------------------------------------------------
@@ -26,8 +25,6 @@ mix.browserSync({
 
 mix.js([
         'resources/js/app.js',
-        'resources/js/_modal-create.js',
-        'resources/js/modals.js',
     ], 'public/js')
     .vue()
     .postCss('resources/css/app.css', 'public/css', [
@@ -36,8 +33,8 @@ mix.js([
         require('postcss-import'),
     ])
     .sass('resources/sass/app.scss', 'public/css')
-    .tailwind();
-mix.autoload({ 'jquery': ['window.$', 'window.jQuery'] })
+
+//mix.autoload({ 'jquery': ['window.$', 'window.jQuery'] })
 
 
 /* mix.webpackConfig({
