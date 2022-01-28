@@ -37,7 +37,7 @@ class ProjectFactory extends Factory
     public function run()
     {
         Project::factory()
-            ->count(50)
+            ->count(10000)
             ->create();
     }
 }

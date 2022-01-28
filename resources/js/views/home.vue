@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full home-content">
+<!--    <div class="w-full home-content">
         <search-bar></search-bar>
         <div class="row">
             <div class="flex justify-between pl-7">
@@ -27,25 +27,27 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <h1 v-for="project in projects">
+                {{ project.title }}
+            </h1>
+        </div>
+    </div>-->
 </template>
 <script>
 import {useStore} from 'vuex'
 import {computed, reactive, ref, nextTick} from 'vue'
 import SearchBar from "../components/searchBar";
+import {store} from "../store";
 
 export default {
     name: 'home',
     components: {SearchBar},
     setup() {
-        const store = useStore()
-        store.dispatch('apiProjects', null, {root: true})
     },
-
     computed: {
         projects:  () => {
-            console.log(1)
-            return this.$store.state.projects.projects
+            return store.state.projects.projects
         }
     }
 };

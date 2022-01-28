@@ -1,19 +1,34 @@
 import projectsApi from "../../../api/projects-api";
 import {mapActions} from "vuex";
+import notificationEnums from "../../Enums/notificationEnums";
 
 export default {
     state: () => ({
         projects: {},
     }),
     mutations: {
-        setProjects(state, payload) {
+        ADD_PROJECTS(state, payload) {
             state.projects = payload;
         },
     },
     actions: {
-        async apiProjects({commit}) {
-            const response = await projectsApi.getProjects();
-            commit('setProjects', await response.data)
+        apiProjects({commit, dispatch}) {
+            return projectsApi.getProjects()
+                .then((response) => {
+                    commit('ADD_PROJECTS', response.data)
+                    dispatch('notification/ADD_NOTIFICATION_ACTION',  {
+                        type: notificationEnums.SUCCESS,
+                        message: 'Successfully received all projects',
+                        duration: 5000
+                    }, {root: true})
+                })
+                .catch((e) => {
+                    dispatch('notification/ADD_NOTIFICATION_ACTION',  {
+                        type: notificationEnums.FAIL,
+                        message: 'Failed to fetch projects',
+                        duration: 5000
+                    }, {root: true})
+                });
         }
     },
     getters: {

@@ -13,8 +13,9 @@ import '@fortawesome/fontawesome-free/js/brands'
 //import AOS from 'aos';
 import { createApp } from "vue";
 import App from "./app.vue";
-import route from "./routes";
+//import route from "./routes/router";
 import { store } from "./store";
+import 'nprogress/nprogress.css'
 //AOS.init();
 
 createApp(App)

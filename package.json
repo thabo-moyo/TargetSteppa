@@ -44,6 +44,8 @@
         "follow-redirects": "^1.14.7",
         "font-awesome": "^4.7.0",
         "material-notifications": "^0.8.0",
+        "mix": "^0.0.1",
+        "nprogress": "^0.2.0",
         "postcss-import": "^14.0.2",
         "vue-router": "^4.0.12",
         "vuex": "^4.0.2"
