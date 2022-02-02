@@ -16,7 +16,7 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Auth::routes();
+//Auth::routes();
 
 //Route::middleware('auth')->group(function () {
     Route::get('/', function () {

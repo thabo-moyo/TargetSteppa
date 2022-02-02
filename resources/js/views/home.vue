@@ -1,6 +1,5 @@
 <template>
-<!--    <div class="w-full home-content">
-        <search-bar></search-bar>
+<!-- <div class="w-full home-content">
         <div class="row">
             <div class="flex justify-between pl-7">
                 <div class="search-filters flex">

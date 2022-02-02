@@ -1,6 +1,8 @@
 import projectsApi from "../../../api/projects-api";
 import {mapActions} from "vuex";
 import notificationEnums from "../../Enums/notificationEnums";
+import notification from "./notification";
+import {addNotification} from "../methods";
 
 export default {
     state: () => ({
@@ -15,20 +17,23 @@ export default {
         apiProjects({commit, dispatch}) {
             return projectsApi.getProjects()
                 .then((response) => {
+                    new Promise( resolve => setTimeout(resolve, 3000))
                     commit('ADD_PROJECTS', response.data)
                     dispatch('notification/ADD_NOTIFICATION_ACTION',  {
                         type: notificationEnums.SUCCESS,
-                        message: 'Successfully received all projects',
-                        duration: 5000
+                        title: 'TESTING1',
+                        message: 'better work',
+                        duration: 2000
                     }, {root: true})
-                })
-                .catch((e) => {
+
                     dispatch('notification/ADD_NOTIFICATION_ACTION',  {
-                        type: notificationEnums.FAIL,
-                        message: 'Failed to fetch projects',
+                        type: notificationEnums.SUCCESS,
+                        title: 'TESTING2',
+                        message: 'better work',
                         duration: 5000
                     }, {root: true})
-                });
+
+                })
         }
     },
     getters: {

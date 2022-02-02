@@ -7,7 +7,7 @@ const router = createRouter({
     mode: 'history',
     history: createWebHistory(),
     routes: [{
-        path: '/',
+        path: '/home',
         name: 'home',
         props: true,
         component:  () => import('../views/home'),

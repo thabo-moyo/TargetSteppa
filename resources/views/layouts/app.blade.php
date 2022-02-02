@@ -20,6 +20,7 @@
     @stack('styles')
 </head>
 
+<!--<body class="font-sans text-grey-900 text-sm bg-gradient-to-r from-blue-400 to-blue-200">-->
 <body class="font-sans text-grey-900 text-sm ">
     <div id="app">
         <router-view></router-view>

@@ -7,5 +7,6 @@ export const store = createStore({
         projects,
         notification
     },
+    strict: process.env.NODE_ENV !== 'production',
     plugins: [createLogger()],
 })

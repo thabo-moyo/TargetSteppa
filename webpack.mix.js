@@ -14,25 +14,26 @@ require('mix-tailwindcss');
  |
  */
 
-mix.browserSync({
+/*mix.browserSync({
     proxy: process.env.APP_URL,
     open: false,
     watchOptions: {
         usePolling: true,
         interval: 1
     }
-});
+});*/
 
 mix.js([
-        'resources/js/app.js',
-    ], 'public/js')
-    .vue()
+    'resources/js/app.js',
+], 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
         require('autoprefixer'),
         require('postcss-import'),
     ])
+    .sourceMaps()
     .sass('resources/sass/app.scss', 'public/css')
+    .vue();
 
 //mix.autoload({ 'jquery': ['window.$', 'window.jQuery'] })
 
