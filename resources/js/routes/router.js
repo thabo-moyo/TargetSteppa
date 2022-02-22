@@ -1,21 +1,19 @@
 import { createRouter, createWebHistory} from 'vue-router'
 import Nprogress from 'nprogress'
 import {store} from "../store";
-import {next} from "lodash/seq";
 
 const router = createRouter({
     mode: 'history',
     history: createWebHistory(),
     routes: [{
-        path: '/home',
+        path: '/',
         name: 'home',
         props: true,
         component:  () => import('../views/home'),
         beforeEnter(routeTo, routeFrom, next) {
-            store.dispatch('apiProjects', null, {root: true}).then(() => {
-                //setTimeout(() =>{
+            store.dispatch('apiProjects', null, {root: true})
+                .then( () => {
                     next();
-               // }, 20000)
             })
         }
     }],

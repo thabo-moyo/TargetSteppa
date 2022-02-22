@@ -7,13 +7,13 @@
 body {
    // min-height: 100vh;
    // background: linear-gradient(-45deg, #00a799, #9f00e90e, #23a6d5);
-   background: linear-gradient(-45deg, #23a6d5, #23d5ab);
-   background-size: 400% 400%;
+    background: #F7F7F7;
+    background-size: 400% 400%;
     //background: linear-gradient(-45deg, #c065cc, #00e73a, #23a6d5, #fc9700);
     font-family: $font-family-sans-serif;
     animation: gradient 15s ease infinite;
     overflow: hidden !important;
-    @keyframes gradient {
+  /*  @keyframes gradient {
         0% {
             background-position: 0% 50%;
         }
@@ -23,7 +23,7 @@ body {
         100% {
             background-position: 0% 50%;
         }
-    }
+    }*/
     .row{
         margin: 0;
     }

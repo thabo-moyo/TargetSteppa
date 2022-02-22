@@ -1,7 +1,8 @@
 <template>
-<!-- <div class="w-full home-content">
+ <div class="w-full container mx-auto">
         <div class="row">
-            <div class="flex justify-between pl-7">
+            <h1>Projects</h1>
+            <div class="flex justify-between ">
                 <div class="search-filters flex">
                     <button class="m-3 btn-default btn active focus:outline-none">
                         <p>All </p>
@@ -26,17 +27,17 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+<!--        <div class="row">
             <h1 v-for="project in projects">
                 {{ project.title }}
             </h1>
-        </div>
-    </div>-->
+        </div>-->
+    </div>
 </template>
 <script>
 import {useStore} from 'vuex'
 import {computed, reactive, ref, nextTick} from 'vue'
-import SearchBar from "../components/searchBar";
+import SearchBar from "../components/SearchBar";
 import {store} from "../store";
 
 export default {

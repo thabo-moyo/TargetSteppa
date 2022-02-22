@@ -14,14 +14,15 @@ require('mix-tailwindcss');
  |
  */
 
-/*mix.browserSync({
+mix.browserSync({
     proxy: process.env.APP_URL,
     open: false,
+    notify: false,
     watchOptions: {
         usePolling: true,
         interval: 1
-    }
-});*/
+    },
+});
 
 mix.js([
     'resources/js/app.js',

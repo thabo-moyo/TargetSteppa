@@ -1,5 +1,4 @@
-import notificationEnums from "../../Enums/notificationEnums";
-let nextId = 1 //Make sure every notification has an ID
+let nextId = 0;
 
 export default {
     namespaced: true,
@@ -8,34 +7,44 @@ export default {
     }),
     mutations: {
         ADD_NOTIFICATION(state, newNotification) {
-            state.notifications.push({
-                ...newNotification //args
+            state.notifications.forEach(notification => {
+                if(notification.message === newNotification.message){
+                    newNotification = undefined;
+                }
             })
+            if (newNotification !== undefined){
+                state.notifications.push({
+                    ...newNotification //args
+                })
+            }
         },
         DELETE_NOTIFICATION(state, notificationToRemove) {
-            console.log('id: ' + notificationToRemove.id, 'title:' + notificationToRemove.title)
             state.notifications = state.notifications.filter(
-                notification => notification.id === notificationToRemove.id
+                notification => notification.id !== notificationToRemove.id
             )
         }
     },
     actions: {
-        ADD_NOTIFICATION_ACTION({ commit, dispatch }, newNotification) {
-            newNotification.id = nextId++
-            console.log('id: ' + newNotification.id, 'title:' + newNotification.title)
-            commit('ADD_NOTIFICATION', newNotification);
+        ADD_NOTIFICATION_ACTION({commit, dispatch}, newNotification) {
+            let id = nextId;
+            commit('ADD_NOTIFICATION', {
+                id: nextId++,
+                message: newNotification.message,
+                type: newNotification.type ?? 'success',
+                hasDownload: newNotification.hasDownload ?? false,
+                downloadButtonText: newNotification.downloadButtonText ?? null,
+                downloadUrl: newNotification.downloadUrl ?? null,
+            });
             setTimeout(() => {
-               // commit('DELETE_NOTIFICATION',newNotification)
+                    commit('DELETE_NOTIFICATION', {id: id})
             }, newNotification.duration ?? 5000)
             clearTimeout();
         },
-        DELETE_NOTIFICATION_ACTION({ commit }, notificationToRemove) {
-            commit('notification/DELETE_NOTIFICATION', notificationToRemove);
+        DELETE_NOTIFICATION_ACTION({commit}, notificationToRemove) {
+            commit('DELETE_NOTIFICATION', notificationToRemove);
         }
     },
     getters: {
-        getNotifications: state => {
-            return state.notifications
-        }
+        getNotifications: state => state.notifications
     }
 }

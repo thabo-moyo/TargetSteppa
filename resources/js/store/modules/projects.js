@@ -19,20 +19,6 @@ export default {
                 .then((response) => {
                     new Promise( resolve => setTimeout(resolve, 3000))
                     commit('ADD_PROJECTS', response.data)
-                    dispatch('notification/ADD_NOTIFICATION_ACTION',  {
-                        type: notificationEnums.SUCCESS,
-                        title: 'TESTING1',
-                        message: 'better work',
-                        duration: 2000
-                    }, {root: true})
-
-                    dispatch('notification/ADD_NOTIFICATION_ACTION',  {
-                        type: notificationEnums.SUCCESS,
-                        title: 'TESTING2',
-                        message: 'better work',
-                        duration: 5000
-                    }, {root: true})
-
                 })
         }
     },

@@ -1,14 +1,12 @@
 import $ from 'jquery';
 window.$ = window.jQuery = require('jquery');
-
+require('./bootstrap')
 
 //import 'jquery-ui/ui/widgets/datepicker.js';
 //$('#datepicker').datepicker();
 
-import '@fortawesome/fontawesome-free/js/fontawesome'
-import '@fortawesome/fontawesome-free/js/solid'
-import '@fortawesome/fontawesome-free/js/regular'
-import '@fortawesome/fontawesome-free/js/brands'
+import 'material-icons/iconfont/material-icons.css';
+
 //import snackbar from 'material-notifications'
 //import AOS from 'aos';
 import { createApp } from "vue";
