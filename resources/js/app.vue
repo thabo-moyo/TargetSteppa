@@ -3,7 +3,7 @@
     <div class="w-100">
         <search-bar @toggle-nav="toggleNav" :isOpen="navStatus"></search-bar>
         <navigation :toggle-nav="navStatus"></navigation>
-        <router-view></router-view>
+        <router-view :toggle-nav="navStatus"></router-view>
     </div>
 </template>
 

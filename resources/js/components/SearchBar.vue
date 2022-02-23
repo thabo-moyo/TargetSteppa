@@ -1,9 +1,9 @@
 <template>
     <div class="shadow-sm w-100 flex justify-between items-center text-primary pl-9 pr-9 pt-2">
-        <div class="w-1/6 relative"  @click="$emit('toggleNav')">
+        <div class="w-1/6 relative justify-self-start"  @click="$emit('toggleNav')">
             <TransitionGroup enter-active-class="transform transition ease-in-out duration-150 sm:duration-700" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="transform transition ease-in-out duration-500 sm:duration-700" leave-from-class="opacity-100" leave-to-class="opacity-0">
-                <span v-show="!isOpen" :key="1" class=" material-icons-outlined absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">menu</span>
-                <span v-show="isOpen" :key="2" class=" material-icons-outlined absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">close</span>
+                <span v-show="!isOpen" :key="1" class=" material-icons-outlined absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">menu</span>
+                <span v-show="isOpen" :key="2" class=" material-icons-outlined absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">close</span>
             </TransitionGroup>
         </div>
 
